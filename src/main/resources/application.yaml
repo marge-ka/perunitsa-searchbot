@@ -1,0 +1,63 @@
+server:
+  port: 8080
+
+spring:
+  datasource:
+    username: ваш_логин
+    password: ваш_пароль
+    url: jdbc:mysql://localhost:3306/search_engine?useSSL=false&requireSSL=false&allowPublicKeyRetrieval=true
+  jpa:
+    hikari:
+      maximum-pool-size: 100
+      minimum-idle: 20
+      connection-timeout: 30000
+      max-lifetime: 1800000
+      idle-timeout: 600000
+
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  mvc:
+    static-path-pattern: /**
+  web:
+    cors:
+      allowed-origins: "*"
+      allowed-methods: GET,POST,PUT,DELETE
+      allowed-headers: "*"
+
+indexing-settings:
+  crawler:
+    user-agent: "Mozilla/5.0 (compatible; PerunitsaSearchBot/1.0; https://github.com/marge-ka/perunitsa-searchbot.git)"
+    referrer: "https://www.google.com"
+    timeout-ms: 15000
+    follow-redirects: true
+    delay-between-requests-ms: 2000
+
+  sites:
+    - url: https://www.playback.ru/
+      name: PlayBack.Ru
+    - url: https://volochek.life/
+      name: Волочёк.Лайф
+    - url: https://ipfran.ru/
+      name: ИПФ РАН
+    - url: https://dimonvideo.ru/
+      name: DimonVideo
+    - url: https://nikoartgallery.com/
+      name: Niko Art Gallery
+    - url: https://et-cetera.ru/mobile/
+      name: Театр Et Cetera (моб.)
+    - url: https://www.lutherancathedral.ru/
+      name: Лютеранский кафедральный собор
+    - url: https://dombulgakova.ru/
+      name: Дом Булгакова
+    - url: https://www.svetlovka.ru/
+      name: Библиотека Светловка
+    - url: http://radiomv.ru/
+      name: Радио МВ
+    - url: https://www.lenta.ru/
+      name: Лента.ру
+    - url: https://www.skillbox.ru/
+      name: Skillbox

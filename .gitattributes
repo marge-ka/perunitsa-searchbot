@@ -1,0 +1,16 @@
+* text=auto
+
+*.md text
+*.yaml text
+*.yml text
+*.java text
+*.properties text
+*.xml text
+*.json text
+
+*.sh text eol=lf
+*.bash text eol=lf
+
+*.png binary
+*.jpg binary
+*.jar binary
